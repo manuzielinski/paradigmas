@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
+
+body {
+    background-color: #d6d5d5;
+}
+
+.header {
+    background-color: #292828;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 10px 2%;
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 140px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.02);
+}
+
+.header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+
+.header .nav-links li {
+    padding: 0 20px;
+}
+
+.header .nav-links li:first-child {
+    margin-right: auto; 
+}
+
+.header .nav-links a {
+    font-weight: 7000;
+    color: #d6d5d5;
+    text-decoration: none;
+}
+
+.header .nav-links li a:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.02);
+}
+
+.header .login-link {
+    margin-left: 720px; 
+    font-weight: 7000;
+    color: #d6d5d5;
+    text-decoration: none;
+}
+
+.header .login-link:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.02);
+}
+
+.header .image-button img {
+    height: 40px; 
+    width: auto;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.header .image-button img:hover {
+    transform: scale(1.05);
+}
+
+
