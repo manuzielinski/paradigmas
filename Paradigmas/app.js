@@ -1,0 +1,1 @@
+let console.assert(expression, object);
