@@ -1,0 +1,66 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.container-card {
+    width: 270px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.container .card .product-image {
+    width: 100%;
+    text-align: center;
+}
+
+.container .card .product-image img {
+    width: auto;
+    max-width: 200px;
+}
+
+.container .card .product-info h3 {
+    padding: 0 15px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container .card .product-info h4 {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.container .card .btn {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.container .card .btn a.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    border: 1px solid #007bff;
+}
+
+.container .card .btn a.button-link:hover {
+    background-color: #0056b3;
+}
