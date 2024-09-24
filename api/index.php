@@ -1,0 +1,1 @@
+requite __DIR__ . '/../index.php';
