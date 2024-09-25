@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar - Smoke Society</title>
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/comprar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="../assets/icons/Logo.png" alt="Smoke Logo">
+        </div>
+    
+        <button class="menu-toggle" aria-label="Toggle menu">
+            &#9776;
+        </button>
+    
+        <div class="nav-container">
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/comprar.html">Carrito</a></li>
+                    <li><a href="../pages/listado_tabla.html">Productos</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div class="user-actions">
+            <input type="search" placeholder="Buscar" class="search-icon">
+            <a href="../pages/login.html" class="image-button">
+                <img src="../assets/icons/perfil.png" alt="Perfil">
+                <a href="../pages/login.html" class="login-link">Iniciar Sesión</a>
+            </a>
+        </div>
+    </header>   
+    
+
+    <div class="Forms-container">
+        <h1>Formulario de Compra</h1>
+        <form action="procesar_compra.php" method="post">
+            <div class="form-group">
+                <label for="name">Nombre del Cliente:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="payment">Medio de Pago:</label>
+                <select id="payment" name="payment" required>
+                    <option value="credit_card">Tarjeta de Crédito</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank_transfer">Transferencia Bancaria</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="product">Producto:</label>
+                <?php
+                $product = isset($_GET['product']) ? htmlspecialchars($_GET['product']) : 'No especificado';
+                ?>
+                <input type="text" id="product" name="product" value="<?php echo $product; ?>" readonly>
+            </div>
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Nuestros Servicios</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Estado del Pedido</a></li>
+                    <li><a href="#">Opciones de Pago</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="#">Cigarrillos Electrónicos</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="#">Liquidos</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="scripts/burguerAnimation.js"></script>
+</body>
+</html>

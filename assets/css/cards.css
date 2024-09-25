@@ -91,7 +91,6 @@
     transition: all 0.3s ease;
 }
 
-/* Cambio de color al seleccionar una opción */
 #priceFilter:focus {
     border-color: #007bff;
     outline: none;

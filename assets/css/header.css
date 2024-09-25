@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
-    font-size: 20px;
 }
 
 body {
@@ -13,127 +12,198 @@ body {
 .header {
     background-color: #292828;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 85px;
     padding: 10px 2%;
-    gap: 25px;
     margin-bottom: 30px;
+    transition: all 0.3s ease;
+    justify-content: space-between;
 }
 
-.header .logo {
+.logo {
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.header .logo img {
-    height: 140px; 
-    width: auto;
-    transition: all 0.3s;
+.menu-toggle {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #d6d5d5;
+    cursor: pointer;
+    margin-left: 10px;
+    display: none;
 }
 
-.header nav {
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.nav-container {
     display: flex;
     align-items: center;
     flex-grow: 1;
-}
-
-.header .nav-links {
-    list-style: none;
-    display: flex;
     margin-left: 20px;
 }
 
-.header .nav-links li {
-    padding: 0 20px;
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex;
+    width: 100%;
 }
 
-.header .nav-links a {
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    padding: 0 10px;
+}
+
+.nav-links a {
     font-weight: 700;
     color: #d6d5d5;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.header .search-icon {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 20px;
+.nav-links a:hover {
+    color: #fff;
 }
 
-.header .search-icon input[type="search"] {
+.search-icon {
     padding: 5px 15px;
     border: none;
     border-radius: 17px;
     background-color: #fff;
     outline: none;
+    transition: all 0.3s ease;
 }
 
-.header .login-link {
+.login-link {
     font-weight: 700;
     color: #d6d5d5;
     text-decoration: none;
-    margin-left: 1px;
+    transition: color 0.3s ease;
 }
 
-.header .image-button img {
-    height: 40px; 
+.login-link:hover {
+    color: #fff;
+}
+
+.image-button img {
+    height: 40px;
     width: auto;
     cursor: pointer;
     transition: all 0.3s;
 }
 
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        padding: 15px 5%;
+    .menu-toggle {
+        display: block;
     }
 
-    .header .nav-links {
+    .nav-container {
+        display: none;
+        width: 30%;
+        background-color: #292828;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 40px 0px;
+        z-index: 1000;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-container.active {
+        display: block;
+        animation: slideDown 0.3s ease-out;
+        background-color: #333333;
+        padding: 10px 0;
+    }
+
+    .nav {
         flex-direction: column;
-        margin-left: 0;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
         width: 100%;
+        margin: 10px 0;
     }
 
-    .header .nav-links li {
+    .nav-links li {
         padding: 10px 0;
         width: 100%;
         text-align: center;
+        border-bottom: 1px solid #444444;
     }
 
-    .header .search-icon {
-        width: 100%;
-        margin-left: 0;
-        margin-bottom: 10px;
+    .nav-links li:last-child {
+        border-bottom: none;
     }
 
-    .header .search-icon input[type="search"] {
-        width: 100%;
-        padding: 10px;
+    .nav-links a {
+        color: #d6d5d5;
+        font-size: 18px;
     }
 
-    .header .login-link, .header .image-button {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
+    .search-icon {
+        width: 90%;
+        margin: 15px 0;
+        display: flex;
+        justify-content: center;
     }
 
-    .header .image-button img {
+    .logo img {
+        height: 50px;
+    }
+
+    .image-button img {
         height: 50px;
     }
 }
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 480px) {
-    .header .logo img {
-        height: 50px; 
+    .logo img {
+        height: 40px;
     }
 
-    .header .nav-links li {
+    .nav-links li {
         padding: 8px 0;
     }
 
-    .header .search-icon input[type="search"] {
+    .search-icon {
         padding: 8px;
+    }
+
+    .image-button img {
+        height: 40px;
     }
 }
