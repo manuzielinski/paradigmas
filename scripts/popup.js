@@ -1,18 +1,31 @@
 function showPopup() {
-    document.getElementById('reviewPopup').style.display = 'block';
+    const popup = document.getElementById('reviewPopup');
+    popup.style.display = 'block';
+    setTimeout(() => {
+        popup.classList.add('show');
+    }, 10);
 }
 
 document.getElementById('closePopup').onclick = function() {
-    document.getElementById('reviewPopup').style.display = 'none';
+    const popup = document.getElementById('reviewPopup');
+    popup.classList.remove('show');
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 500);
 }
 
 window.onclick = function(event) {
     const popup = document.getElementById('reviewPopup');
     if (event.target === popup) {
-        popup.style.display = 'none';
+        popup.classList.remove('show');
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 500);
     }
 }
 
 window.onload = function() {
-    setTimeout(showPopup, 2100);
+    setTimeout(function() {
+        showPopup();
+    }, 2900);
 }

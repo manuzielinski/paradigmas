@@ -2,13 +2,8 @@ document.getElementById("priceFilter").addEventListener("change", function() {
     const cardsContainer = document.querySelector(".container");
     const cards = Array.from(cardsContainer.children);
     const selectedValue = this.value;
-
-
     cardsContainer.classList.add("fade-out");
-
-
     setTimeout(() => {
-
         cards.sort((a, b) => {
             const priceA = parseInt(a.getAttribute("data-price"));
             const priceB = parseInt(b.getAttribute("data-price"));
