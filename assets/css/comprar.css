@@ -43,18 +43,19 @@ form {
     margin: 0;
 }
 
-button {
+.btn-submit {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #0a76eb;
     color: white;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button:hover {
+.btn-submit:hover {
     background-color: #0056b3;
 }
