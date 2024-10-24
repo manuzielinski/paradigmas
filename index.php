@@ -72,7 +72,7 @@
                     <h4>$19000 ARS</h4>
                 </div>
                 <div class="btn">
-                    <a href="pages/producto.html" class="button-link">Comprar</a>
+                    <a href="pages/producto.php" class="button-link">Comprar</a>
                 </div>
             </div>
             <div class="card" data-price="29000">
@@ -84,7 +84,7 @@
                     <h4>$29000 ARS</h4>
                 </div>
                 <div class="btn">
-                    <a href="pages/producto.html" class="button-link">Comprar</a>
+                    <a href="pages/producto.php" class="button-link">Comprar</a>
                 </div>
             </div>
             <div class="card" data-price="14000">
@@ -96,7 +96,7 @@
                     <h4>$14000 ARS</h4>
                 </div>
                 <div class="btn">
-                    <a href="pages/producto.html" class="button-link">Comprar</a>
+                    <a href="pages/producto.php" class="button-link">Comprar</a>
                 </div>
             </div>
             <div class="card" data-price="25000">
@@ -108,7 +108,7 @@
                     <h4>$25000 ARS</h4>
                 </div>
                 <div class="btn">
-                    <a href="pages/producto.html" class="button-link">Comprar</a>
+                    <a href="pages/producto.php" class="button-link">Comprar</a>
                 </div>
             </div>
             <div class="card" data-price="20000">
@@ -120,7 +120,7 @@
                     <h4>$20000 ARS</h4>
                 </div>
                 <div class="btn">
-                    <a href="pages/producto.html" class="button-link">Comprar</a>
+                    <a href="pages/producto.php" class="button-link">Comprar</a>
                 </div>
             </div>
             <div class="card" data-price="5500">
@@ -132,7 +132,7 @@
                     <h4>$5500 ARS</h4>
                 </div>
                 <div class="btn">
-                    <a href="pages/producto.html" class="button-link">Comprar</a>
+                    <a href="pages/producto.php" class="button-link">Comprar</a>
                 </div>
             </div>
             <div class="card" data-price="27000">
@@ -144,7 +144,7 @@
                     <h4>$27000 ARS</h4>
                 </div>
                 <div class="btn">
-                    <a href="pages/producto.html" class="button-link">Comprar</a>
+                    <a href="pages/producto.php" class="button-link">Comprar</a>
                 </div>
             </div>
             <div class="card" data-price="16000">
@@ -156,7 +156,7 @@
                     <h4>$16000 ARS</h4>
                 </div>
                 <div class="btn">
-                    <a href="pages/producto.html" class="button-link">Comprar</a>
+                    <a href="pages/producto.php" class="button-link">Comprar</a>
                 </div>
             </div>
             <div class="card" data-price="7000">
@@ -168,7 +168,7 @@
                     <h4>$7000 ARS</h4>
                 </div>
                 <div class="btn">
-                    <a href="pages/producto.html" class="button-link">Comprar</a>
+                    <a href="pages/producto.php" class="button-link">Comprar</a>
                 </div>
             </div>
         </div>
@@ -193,44 +193,44 @@
             <div class="news-container">
 
                 <div class="news-item">
-                    <a href="/pages/noticia.html" class="news-image">
+                    <a href="/pages/noticia.php" class="news-image">
                         <img src="//indyargentina.com/cdn/shop/articles/historia-de-la-nicotina-712794.webp?v=1727191943" alt="Historia de la Nicotina" />
                     </a>
                     <div class="news-meta">
                         <span class="news-date"><time datetime="2024-09-23">2024-09-23</time></span>
                         <h3 class="news-title">
-                            <a href="/pages/noticia.html">Historia de la Nicotina</a>
+                            <a href="/pages/noticia.php">Historia de la Nicotina</a>
                         </h3>
                         <p class="news-excerpt">Quizás no conocías mucho sobre la nicotina, por eso aquí vamos a contarte un poquito de su historia y por qué es tan popular en la actualidad.</p>
-                        <a href="/pages/noticia.html" class="btn1 btn--secondary btn--small">Leer más</a>
+                        <a href="/pages/noticia.php" class="btn1 btn--secondary btn--small">Leer más</a>
                     </div>
                 </div>
         
                 <div class="news-item">
-                    <a href="/pages/noticia.html" class="news-image">
+                    <a href="/pages/noticia.php" class="news-image">
                         <img src="//indyargentina.com/cdn/shop/articles/vapeando-seguro-desmitificando-los-cigarrillos-electronicos-564045.webp?v=1721478707" alt="Vapeando Seguro: Desmitificando los Cigarrillos Electrónicos" />
                     </a>
                     <div class="news-meta">
                         <span class="news-date"><time datetime="2024-06-25">2024-06-25</time></span>
                         <h3 class="news-title">
-                            <a href="/pages/noticia.html">Vapeando Seguro: Desmitificando los Cigarrillos Electrónicos</a>
+                            <a href="/pages/noticia.php">Vapeando Seguro: Desmitificando los Cigarrillos Electrónicos</a>
                         </h3>
                         <p class="news-excerpt">Una de las mentiras más comunes sobre el vapeo es que te aumenta la adicción a fumar cigarrillos tradicionales.</p>
-                        <a href="/pages/noticia.html" class="btn1 btn--secondary btn--small">Leer más</a>
+                        <a href="/pages/noticia.php" class="btn1 btn--secondary btn--small">Leer más</a>
                     </div>
                 </div>
         
                 <div class="news-item">
-                    <a href="/pages/noticia.html" class="news-image">
+                    <a href="/pages/noticia.php" class="news-image">
                         <img src="//indyargentina.com/cdn/shop/articles/por-que-mi-vape-escupe-741562.webp?v=1724162959" alt="Por qué mi Vape escupe" />
                     </a>
                     <div class="news-meta">
                         <span class="news-date"><time datetime="2024-08-19">2024-08-19</time></span>
                         <h3 class="news-title">
-                            <a href="/pages/noticia.html">Por qué mi Vape escupe</a>
+                            <a href="/pages/noticia.php">Por qué mi Vape escupe</a>
                         </h3>
                         <p class="news-excerpt">Si tu Vape te juega una mala pasada y te plantea un momento incómodo cuando, en lugar de un suave...</p>
-                        <a href="/pages/noticia.html" class="btn1 btn--secondary btn--small">Leer más</a>
+                        <a href="/pages/noticia.php" class="btn1 btn--secondary btn--small">Leer más</a>
                     </div>
                 </div>
             </div>
