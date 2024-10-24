@@ -29,55 +29,55 @@
                     <td><img src="../assets/images/Nikbar4000.jpeg" alt="Nikbar 4000"></td>
                     <td>Nikbar 4000</td>
                     <td>$19000 ARS</td>
-                    <td><a href="../pages/producto.html">Comprar</a></td>
+                    <td><a href="../pages/producto.php">Comprar</a></td>
                 </tr>
                 <tr>
                     <td><img src="../assets/images/Elfbar10000.jpeg" alt="Nikbar 1500"></td>
                     <td>Elfbar 10000</td>
                     <td>$29000 ARS</td>
-                    <td><a href="../pages/producto.html">Comprar</a></td>
+                    <td><a href="../pages/producto.php">Comprar</a></td>
                 </tr>
                 <tr>
                     <td><img src="../assets/images/Nikbar2500.jpeg" alt="Nikbar 2500"></td>
                     <td>Nikbar 2500</td>
                     <td>$14000 ARS</td>
-                    <td><a href="../pages/producto.html">Comprar</a></td>
+                    <td><a href="../pages/producto.php">Comprar</a></td>
                 </tr>
                 <tr>
                     <td><img src="../assets/images/Nikbar6000.jpeg" alt="Nikbar 6000"></td>
                     <td>Nikbar 6000</td>
                     <td>$25000 ARS</td>
-                    <td><a href="../pages/producto.html">Comprar</a></td>
+                    <td><a href="../pages/producto.php">Comprar</a></td>
                 </tr>
                 <tr>
                     <td><img src="../assets/images/Geekbar5000.jpeg" alt="Geekbar 5000"></td>
                     <td>Geekbar 5000</td>
                     <td>$20000 ARS</td>
-                    <td><a href="../pages/producto.html">Comprar</a></td>
+                    <td><a href="../pages/producto.php">Comprar</a></td>
                 </tr>
                 <tr>
                     <td><img src="../assets/images/MammaPro1000.jpeg" alt="Mamma Pro 1000"></td>
                     <td>Mamma Pro 1000</td>
                     <td>$5500 ARS</td>
-                    <td><a href="../pages/producto.html">Comprar</a></td>
+                    <td><a href="../pages/producto.php">Comprar</a></td>
                 </tr>
                 <tr>
                     <td><img src="../assets/images/MaskKing8000.jpeg" alt="Mask King 8000"></td>
                     <td>Mask King 8000</td>
                     <td>$27000 ARS</td>
-                    <td><a href="../pages/producto.html">Comprar</a></td>
+                    <td><a href="../pages/producto.php">Comprar</a></td>
                 </tr>
                 <tr>
                     <td><img src="../assets/images/Nikbar8000.jpeg" alt="Nikbar 8000"></td>
                     <td>Nikbar 8000</td>
                     <td>$16000 ARS</td>
-                    <td><a href="../pages/producto.html">Comprar</a></td>
+                    <td><a href="../pages/producto.php">Comprar</a></td>
                 </tr>
                 <tr>
                     <td><img src="../assets/images/DozeUp600.jpeg" alt="DozeUp 600"></td>
                     <td>DozeUp 600</td>
                     <td>$7000 ARS</td>
-                    <td><a href="../pages/producto.html">Comprar</a></td>
+                    <td><a href="../pages/producto.php">Comprar</a></td>
                 </tr>
             </tbody>
         </table>
