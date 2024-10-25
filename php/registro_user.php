@@ -1,32 +1,39 @@
 <?php
+include '../php/conexion.php'; // Asegúrate de que la ruta es correcta
 
-    include 'config.php';
-
+// Verifica si el formulario fue enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $user = $_POST['user'];
+    $age = $_POST['age'];
     $password = $_POST['password'];
 
-    $query = "INSERT INTO user (name, email, user, password) 
-            VALUES ('$name', '$email', '$user', '$password)";
+    // Hash de la contraseña
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $ejecutar = mysqli_query($con, $query);
+    // Prepara la consulta SQL
+    $query = "INSERT INTO usuarios (nombre, email, edad, contraseña) VALUES (?, ?, ?, ?)";
+    $stmt = $pdo->prepare($query);
 
-    if($ejecutar) {
+    try {
+        // Ejecuta la consulta
+        $stmt->execute([$name, $email, $age, $hashed_password]);
+        
+        // Mostrar mensaje de éxito y redirigir al índice
         echo "
         <script>
-        alert('Usuario registrado exitosamente!');
+        alert('¡Usuario creado correctamente!');
         window.location.href='../index.php';
         </script>
         ";
-    }else {
+    } catch (PDOException $e) {
+        // Manejo de errores
         echo "
         <script>
-        alert('Intentalo nuevamente');
+        alert('Error: " . $e->getMessage() . "');
         window.location.href='../register.php';
         </script>
         ";
     }
-
-    mysqli_close($con);
+}
 ?>

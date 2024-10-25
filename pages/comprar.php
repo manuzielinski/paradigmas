@@ -11,11 +11,59 @@
 </head>
 <body>
 
-    <?php include '../includes/header2.php'; ?>
+    <?php 
+    include '../includes/header2.php'; 
+    include '../php/conexion.php'; // Asegúrate de que la ruta es correcta
+
+    $mensaje_exito = '';
+
+    // Verifica si la conexión es exitosa
+    if (!$pdo) {
+        die('Error: No se pudo establecer conexión a la base de datos.');
+    }
+
+    // Obtener los datos del formulario
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nombre = $_POST['name'];
+        $direccion = $_POST['address'];
+        $telefono = $_POST['phone'];
+        $email = $_POST['email'];
+        $metodo_pago = $_POST['payment'];
+        $producto_id = $_POST['product']; // Obtener el ID del producto
+
+        try {
+            $pdo->beginTransaction();
+
+            // 1. Insertar nuevo cliente en la tabla clientes
+            $stmt_cliente = $pdo->prepare("INSERT INTO clientes (nombre, direccion, telefono, email) VALUES (?, ?, ?, ?)
+                                            ON DUPLICATE KEY UPDATE nombre = ?, direccion = ?, telefono = ?");
+            $stmt_cliente->execute([$nombre, $direccion, $telefono, $email, $nombre, $direccion, $telefono]);
+            
+            // Obtener el ID del cliente
+            $cliente_id = $pdo->lastInsertId();
+
+            // 2. Insertar el pedido en la tabla de pedidos
+            $stmt_pedido = $pdo->prepare("INSERT INTO pedidos (cliente_id, producto_id, medio_pago) VALUES (?, ?, ?)");
+            $stmt_pedido->execute([$cliente_id, $producto_id, $metodo_pago]);
+            
+            $pdo->commit(); // Confirmar la transacción
+            $mensaje_exito = "¡Compra realizada con éxito!";
+        } catch (Exception $e) {
+            $pdo->rollBack(); // Revertir en caso de error
+            $mensaje_exito = "Error al realizar la compra: " . $e->getMessage();
+        }
+    }
+    ?>
 
     <div class="Forms-container">
         <h1>Formulario de Compra</h1>
-        <form action="procesar_compra.php" method="post">
+        <?php if ($mensaje_exito): ?>
+            <div class="success-message">
+                <p><?php echo $mensaje_exito; ?></p>
+            </div>
+        <?php endif; ?>
+
+        <form action="comprar.php" method="post">
             <div class="form-group">
                 <label for="name">Nombre del Cliente:</label>
                 <input type="text" id="name" name="name" required>
@@ -42,18 +90,22 @@
             </div>
             <div class="form-group">
                 <label for="product">Producto:</label>
-                <?php
-                $product = isset($_GET['product']) ? htmlspecialchars($_GET['product']) : 'No especificado';
-                ?>
-                <input type="text" id="product" name="product" value="<?php echo $product; ?>" readonly>
+                <select id="product" name="product" required>
+                    <?php
+                    // Obtener productos de la base de datos
+                    $stmt_productos = $pdo->query("SELECT id, nombre, sabor FROM productos");
+                    while ($row = $stmt_productos->fetch(PDO::FETCH_ASSOC)) {
+                        echo '<option value="' . $row['id'] . '">' . htmlspecialchars($row['nombre']) . ' - ' . htmlspecialchars($row['sabor']) . '</option>';
+                    }
+                    ?>
+                </select>
             </div>
             <button type="submit" class="btn-submit">Enviar Pedido</button>
         </form>
     </div>
 
     <?php include '../includes/footer.php'; ?>
-
-<script src="../scripts/burguerAnimation.js"></script>
+    <script src="../scripts/burguerAnimation.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,24 +13,24 @@
 
     <?php include '../includes/header2.php'; ?>
     
-      <div class="container-login">
+    <div class="container-login">
         <div class="box form-box">
 
             <header>Crea Una Cuenta Ahora!</header>
             <form action="php/registro_user.php" method="post">
                 <div class="field input">
-                    <label for="username">Usuario</label>
+                    <label for="name">Usuario</label>
                     <input type="text" name="name" id="name" autocomplete="off" required>
                 </div>
 
                 <div class="field input">
                     <label for="email">Correo</label>
-                    <input type="text" name="email" id="email" autocomplete="off" required>
+                    <input type="email" name="email" id="email" autocomplete="off" required>
                 </div>
 
                 <div class="field input">
                     <label for="age">Edad</label>
-                    <input type="number" name="user" id="user" autocomplete="off" required>
+                    <input type="number" name="age" id="age" autocomplete="off" required>
                 </div>
                 <div class="field input">
                     <label for="password">Contraseña</label>
@@ -38,19 +38,18 @@
                 </div>
 
                 <div class="field">
-                    
                     <input type="submit" class="btn" name="submit" value="Registrarse" required>
                 </div>
                 <div class="links">
-                    Ya eres miembro? <a href="login.html">Ingresa!</a>
+                    Ya eres miembro? <a href="login.php">Ingresa!</a>
                 </div>
             </form>
         </div>
-      </div>
-      
-      <?php include '../includes/footer.php'; ?>
+    </div>
+    
+    <?php include '../includes/footer.php'; ?>
 
-<script src="../scripts/burguerAnimation.js"></script>
+    <script src="../scripts/burguerAnimation.js"></script>
 
 </body>
 </html>
