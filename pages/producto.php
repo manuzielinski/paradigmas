@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-
+    mysql://root:wngBdutlxUPwGwECCtkIRdNdPYdLwZvE@autorack.proxy.rlwy.net:42220/railway
     <?php include '../includes/footer.php'; ?>
 
     <script src="../scripts/burguerAnimation.js"></script>
