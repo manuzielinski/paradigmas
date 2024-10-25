@@ -1,23 +1,19 @@
 <?php 
-session_start(); // Inicia la sesión para almacenar la información del usuario
-include '../php/conexion.php'; // Asegúrate de que la ruta es correcta
+session_start();
+include '../php/conexion.php';
 
-// Verifica si el formulario fue enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $contraseña = $_POST['password'];
 
-    // Consulta el usuario en la base de datos
     $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
     $stmt->execute([$email]);
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Verificar si el usuario existe y la contraseña es correcta
     if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
-        // Si las credenciales son correctas, inicia sesión
         $_SESSION['user_id'] = $usuario['id'];
         $_SESSION['user_name'] = $usuario['nombre'];
-        header("Location: dashboard.php"); // Redirige a la página de éxito
+        header("Location: dashboard.php");
         exit();
     } else {
         $mensaje_error = "Email o contraseña incorrectos.";

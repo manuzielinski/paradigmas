@@ -1,11 +1,9 @@
-/* Estilos generales para el contenedor de productos */
 .product-container {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Detalles del producto */
 .product-details {
     display: flex;
     flex-direction: row;
@@ -13,19 +11,16 @@
     margin-top: 20px;
 }
 
-/* Imagen del producto */
 .product-image img {
     width: 100%;
     max-width: 400px;
     border-radius: 8px;
 }
 
-/* Información del producto */
 .product-info {
     flex: 1;
 }
 
-/* Títulos y párrafos */
 .product-info h1 {
     font-size: 2em;
     margin-bottom: 10px;
@@ -41,7 +36,6 @@
     margin-bottom: 20px;
 }
 
-/* Estilos para los botones de sabor */
 .flavors {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +47,7 @@
     padding: 10px 15px;
     font-size: 1em;
     color: #fff;
-    background-color: #5a5a5a; /* Color de fondo */
+    background-color: #5a5a5a; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -61,25 +55,23 @@
 }
 
 .flavor-btn:hover {
-    background-color: #4e4e4e; /* Color de fondo en hover */
+    background-color: #4e4e4e;
 }
 
-/* Estilo para la etiqueta de cantidad y el input */
 .product-info label {
     font-weight: bold;
     margin-bottom: 5px;
-    display: inline-block; /* Para asegurar que el margen se aplique correctamente */
+    display: inline-block;
 }
 
 .product-info input[type="number"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 60px; /* Ancho fijo */
-    margin-bottom: 20px; /* Espaciado inferior */
+    width: 60px;
+    margin-bottom: 20px; 
 }
 
-/* Botón de compra */
 #buyButton {
     padding: 10px 20px;
     font-size: 1.1em;
@@ -95,31 +87,30 @@
     background-color: #c62828;
 }
 
-/* Responsividad */
 @media (max-width: 768px) {
     .product-details {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        flex-direction: column;
     }
 
     .flavor-btn {
-        flex: 1 1 45%; /* Botones de sabor ocupan el 45% del ancho */
+        flex: 1 1 45%;
     }
 
     .product-info input[type="number"] {
-        width: auto; /* Cambia a auto para mejor responsividad */
+        width: auto;
     }
 }
 
 @media (max-width: 480px) {
     .flavor-btn {
-        flex: 1 1 100%; /* Botones ocupan el 100% del ancho en pantallas muy pequeñas */
+        flex: 1 1 100%;
     }
 
     .product-info h1 {
-        font-size: 1.5em; /* Ajusta el tamaño de fuente */
+        font-size: 1.5em;
     }
 
     .product-info h2 {
-        font-size: 1.3em; /* Ajusta el tamaño de fuente */
+        font-size: 1.3em;
     }
 }

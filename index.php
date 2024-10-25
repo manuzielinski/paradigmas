@@ -16,12 +16,6 @@
 
 </head>
 <body>
-    <script>
-        setInterval(function() {
-        location.reload();
-    }, 2000); 
-
-    </script>
     <?php include 'includes/header.php'; ?>
 
     <main>
