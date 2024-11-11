@@ -1,12 +1,5 @@
 <?php
-try {
-    $pdo = new PDO("mysql:host=localhost;dbname=smokesociety", "root", "");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-    exit();
-}
-
+include '../php/conexion.php';
 // obtener los productos activos
 $stmt = $pdo->prepare("SELECT * FROM productos WHERE activo = 1");
 $stmt->execute();
@@ -42,7 +35,11 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <tbody>
                 <?php foreach ($productos as $producto): ?>
                     <tr>
-                        <td><img src="../assets/images/<?= strtolower(str_replace(' ', '', $producto['nombre'])) ?>.jpeg" alt="<?= $producto['nombre'] ?>"></td>
+                        <td>
+                            <?php if ($producto['foto_blob']): ?>
+                                <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['foto_blob']); ?>" alt="Imagen del producto" class="product-thumbnail">
+                            <?php endif; ?>
+                        </td>
                         <td><?= htmlspecialchars($producto['nombre']) ?></td>
                         <td>$<?= number_format($producto['precio'], 2, ',', '.') ?> ARS</td>
                         <td><a href="../pages/producto.php?id=<?= $producto['id'] ?>">Comprar</a></td>

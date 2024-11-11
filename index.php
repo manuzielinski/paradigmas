@@ -60,7 +60,9 @@ $productos = $stmt_productos->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($productos as $producto): ?>
                 <div class="card" data-price="<?= $producto['precio'] ?>">
                     <div class="product-image">
-                        <img src="assets/images/<?= strtolower(str_replace(' ', '', $producto['nombre'])) ?>.jpeg" alt="<?= $producto['nombre'] ?>">
+                            <?php if ($producto['foto_blob']): ?>
+                                <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['foto_blob']); ?>" alt="Imagen del producto" class="product-thumbnail">
+                            <?php endif; ?>
                     </div>
                     <div class="product-info">
                         <h3><?= $producto['nombre'] ?> - <?= $producto['sabor'] ?></h3>
@@ -73,6 +75,8 @@ $productos = $stmt_productos->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
 
+
+        
         <div class="about-section">
             <img src="assets/images/about.webp" alt="Sobre Nosotros">
             <div class="about-content">
@@ -91,7 +95,7 @@ $productos = $stmt_productos->fetchAll(PDO::FETCH_ASSOC);
         <div class="news-container">
     <?php foreach ($noticias as $noticia): ?>
         <div class="news-item">
-            <a href="/paradigmas/pages/noticia.php?id=<?= $noticia['id'] ?>" class="news-image">
+            <a href="/paradigmas/pages/noticia.php" class="news-image">
                 <?php if ($noticia['imagen_blob']): ?>
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($noticia['imagen_blob']); ?>" alt="<?= $noticia['titulo'] ?>" />
                 <?php else: ?>
@@ -100,10 +104,10 @@ $productos = $stmt_productos->fetchAll(PDO::FETCH_ASSOC);
             </a>
             <div class="news-meta">
                 <h3 class="news-title">
-                    <a href="/paradigmas/pages/noticia.php?id=<?= $noticia['id'] ?>"><?= $noticia['titulo'] ?></a>
+                    <a href="/paradigmas/pages/noticia.php"><?= $noticia['titulo'] ?></a>
                 </h3>
                 <p class="news-excerpt"><?= substr($noticia['contenido'], 0, 150) ?>...</p>
-                <a href="/paradigmas/pages/noticia.php?id=<?= $noticia['id'] ?>" class="btn1 btn--secondary btn--small">Leer más</a>
+                <a href="/paradigmas/pages/noticia.php" class="btn1 btn--secondary btn--small">Leer más</a>
             </div>
         </div>
     <?php endforeach; ?>
