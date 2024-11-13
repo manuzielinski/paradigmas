@@ -1,24 +1,22 @@
 <?php
 include '../php/conexion.php';
-// id de la noticia a mostrar
-$noticia_id = 1;
 
-$query = "SELECT titulo, fecha, contenido, imagen_blob FROM noticias WHERE id = :id";
+// Consulta para obtener una noticia donde el ID sea mayor a 3
+$query = "SELECT id, titulo, fecha, contenido, imagen_blob FROM noticias WHERE id > 3 ORDER BY fecha DESC LIMIT 1";
 $stmt = $pdo->prepare($query);
-$stmt->bindParam(':id', $noticia_id, PDO::PARAM_INT);
 $stmt->execute();
 
 $noticia = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($noticia) {
-    $titulo = $noticia['titulo'];
-    $fecha = $noticia['fecha'];
-    $contenido = $noticia['contenido'];
-    $imagen_blob = $noticia['imagen_blob'];
-} else {
-    echo "Noticia no encontrada.";
+if (!$noticia) {
+    echo "No hay noticias disponibles con ID mayor a 3.";
     exit;
 }
+
+$titulo = $noticia['titulo'];
+$fecha = $noticia['fecha'];
+$contenido = $noticia['contenido'];
+$imagen_blob = $noticia['imagen_blob'];
 ?>
 
 <!DOCTYPE html>
