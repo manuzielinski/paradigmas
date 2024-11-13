@@ -91,11 +91,11 @@ $productos = $stmt_productos->fetchAll(PDO::FETCH_ASSOC);
                 </p>
             </div>
         </div>
-        <h2 class="section-title">Aprende más sobre la nicotina</h2>
+        <h2 class="section-title">Aprende más sobre la Nicotina</h2>
         <div class="news-container">
     <?php foreach ($noticias as $noticia): ?>
         <div class="news-item">
-            <a href="/paradigmas/pages/noticia.php" class="news-image">
+            <a href="pages/noticia.php" class="news-image">
                 <?php if ($noticia['imagen_blob']): ?>
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($noticia['imagen_blob']); ?>" alt="<?= $noticia['titulo'] ?>" />
                 <?php else: ?>
@@ -104,10 +104,10 @@ $productos = $stmt_productos->fetchAll(PDO::FETCH_ASSOC);
             </a>
             <div class="news-meta">
                 <h3 class="news-title">
-                    <a href="/paradigmas/pages/noticia.php"><?= $noticia['titulo'] ?></a>
+                    <a href="pages/noticia.php"><?= $noticia['titulo'] ?></a>
                 </h3>
                 <p class="news-excerpt"><?= substr($noticia['contenido'], 0, 150) ?>...</p>
-                <a href="/paradigmas/pages/noticia.php" class="btn1 btn--secondary btn--small">Leer más</a>
+                <a href="pages/noticia.php" class="btn1 btn--secondary btn--small">Leer más</a>
             </div>
         </div>
     <?php endforeach; ?>
